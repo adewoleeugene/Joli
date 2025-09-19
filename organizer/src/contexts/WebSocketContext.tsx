@@ -33,7 +33,7 @@ export function WebSocketProvider({ children }: WebSocketProviderProps) {
   const [subscribers, setSubscribers] = useState<Map<string, Set<(data: any) => void>>>(new Map())
   
   const wsRef = useRef<WebSocket | null>(null)
-  const reconnectTimeoutRef = useRef<number | null>(null)
+  const reconnectTimeoutRef = useRef<NodeJS.Timeout | null>(null)
   const reconnectAttemptsRef = useRef(0)
   const isManualDisconnectRef = useRef(false)
 
