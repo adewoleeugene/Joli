@@ -43,7 +43,7 @@ export const useVisualFeedback = (options: VisualFeedbackOptions = {}) => {
   });
 
   const toastIdRef = useRef<string | null>(null);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const timeoutRef = useRef<number | null>(null);
 
   const reset = useCallback(() => {
     setState({

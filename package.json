@@ -4,6 +4,7 @@
   "description": "Event Gamification Platform with Client and Organizer apps",
   "main": "server/index.js",
   "scripts": {
+    "postinstall": "cd client && npm install && cd ../organizer && npm install",
     "dev": "concurrently \"npm run dev:shared\" \"npm run dev:user-api\" \"npm run dev:organizer-api\" \"npm run dev:client\" \"npm run dev:organizer\"",
     "dev:frontend": "concurrently \"npm run dev:client\" \"npm run dev:organizer\"",
     "dev:backend": "concurrently \"npm run dev:shared\" \"npm run dev:user-api\" \"npm run dev:organizer-api\"",

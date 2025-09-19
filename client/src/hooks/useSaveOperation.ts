@@ -52,7 +52,7 @@ export const useSaveOperation = (config: SaveOperationConfig): SaveOperationStat
     lastSaveTime: null
   });
 
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const timeoutRef = useRef<number | null>(null);
   const abortControllerRef = useRef<AbortController | null>(null);
 
   const reset = useCallback(() => {

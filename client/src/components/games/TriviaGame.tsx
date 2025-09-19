@@ -28,7 +28,7 @@ const TriviaGame: React.FC<TriviaGameProps> = ({ game, session, isConnected }) =
   const [timeRemaining, setTimeRemaining] = useState<number>(0);
   const [gameStarted, setGameStarted] = useState(false);
   const [gameCompleted, setGameCompleted] = useState(false);
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const timerRef = useRef<number | null>(null);
 
   useEffect(() => {
     const fetchQuestions = async () => {
