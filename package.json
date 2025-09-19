@@ -1,0 +1,46 @@
+{
+  "name": "joli-event-gamification",
+  "version": "1.0.0",
+  "description": "Event Gamification Platform with Client and Organizer apps",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:shared\" \"npm run dev:user-api\" \"npm run dev:organizer-api\" \"npm run dev:client\" \"npm run dev:organizer\"",
+    "dev:frontend": "concurrently \"npm run dev:client\" \"npm run dev:organizer\"",
+    "dev:backend": "concurrently \"npm run dev:shared\" \"npm run dev:user-api\" \"npm run dev:organizer-api\"",
+    "dev:shared": "cd server-shared && npm run dev",
+    "dev:user-api": "cd server-user && npm run dev",
+    "dev:organizer-api": "cd server-organizer && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "dev:organizer": "cd organizer && npm run dev",
+    "build": "npm run build:frontend && npm run build:backend",
+    "build:frontend": "npm run build:client && npm run build:organizer",
+    "build:backend": "npm run build:user-api && npm run build:organizer-api && npm run build:shared",
+    "build:client": "cd client && npm run build",
+    "build:organizer": "cd organizer && npm run build",
+    "build:user-api": "cd server-user && npm run build",
+    "build:organizer-api": "cd server-organizer && npm run build",
+    "build:shared": "cd server-shared && npm run build",
+    "install:all": "npm install && cd server-shared && npm install && cd ../server-user && npm install && cd ../server-organizer && npm install && cd ../client && npm install && cd ../organizer && npm install",
+    "start:production": "concurrently \"npm run start:shared\" \"npm run start:user-api\" \"npm run start:organizer-api\"",
+    "start:shared": "cd server-shared && npm start",
+    "start:user-api": "cd server-user && npm start",
+    "start:organizer-api": "cd server-organizer && npm start"
+  },
+  "keywords": [
+    "event",
+    "gamification",
+    "mobile",
+    "games"
+  ],
+  "author": "Joli Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "dependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.16",
+    "@tanstack/react-query-devtools": "^5.85.9"
+  }
+}
