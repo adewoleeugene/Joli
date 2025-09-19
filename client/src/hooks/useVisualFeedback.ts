@@ -126,7 +126,7 @@ export const useVisualFeedback = (options: VisualFeedbackOptions = {}) => {
     }
 
     if (autoReset) {
-      timeoutRef.current = setTimeout(reset, resetDelay);
+      timeoutRef.current = setTimeout(reset, resetDelay) as unknown as number;
     }
   }, [successMessage, showToast, autoReset, resetDelay, reset]);
 

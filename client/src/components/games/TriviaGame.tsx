@@ -63,7 +63,7 @@ const TriviaGame: React.FC<TriviaGameProps> = ({ game, session, isConnected }) =
   // Timer effect
   useEffect(() => {
     if (gameStarted && !gameCompleted && timeRemaining > 0) {
-      timerRef.current = setInterval(() => {
+      timerRef.current = window.setInterval(() => {
         setTimeRemaining((prev) => {
           if (prev <= 1) {
             setGameCompleted(true);
@@ -71,7 +71,7 @@ const TriviaGame: React.FC<TriviaGameProps> = ({ game, session, isConnected }) =
           }
           return prev - 1;
         });
-      }, 1000);
+      }, 1000) as unknown as number;
     } else {
       if (timerRef.current) {
         clearInterval(timerRef.current);

@@ -107,7 +107,7 @@ export const useSaveOperation = (config: SaveOperationConfig): SaveOperationStat
         if (abortControllerRef.current) {
           abortControllerRef.current.abort();
         }
-      }, timeout);
+      }, timeout) as unknown as number;
 
       // Perform the save operation
       await onSave();

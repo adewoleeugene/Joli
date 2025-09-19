@@ -76,7 +76,7 @@ export function WebSocketProvider({ children }: WebSocketProviderProps) {
           
           reconnectTimeoutRef.current = setTimeout(() => {
             connect()
-          }, RECONNECT_INTERVAL)
+          }, RECONNECT_INTERVAL) as unknown as number
         } else if (reconnectAttemptsRef.current >= MAX_RECONNECT_ATTEMPTS) {
           setConnectionStatus('error')
           toast.error('Connection lost. Please refresh the page.')
