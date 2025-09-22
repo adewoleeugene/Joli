@@ -1,5 +1,31 @@
 {
   "buildCommand": "npm run build:frontend && mkdir -p public && cp -r client/dist/* public/ && mkdir -p public/organizer && cp -r organizer/dist/* public/organizer/",
   "outputDirectory": "public",
-  "installCommand": "npm install"
+  "installCommand": "npm install",
+  "routes": [
+    {
+      "src": "/organizer/assets/(.*)",
+      "dest": "/organizer/assets/$1"
+    },
+    {
+      "src": "/organizer/favicon.svg",
+      "dest": "/organizer/favicon.svg"
+    },
+    {
+      "src": "/organizer/(.*)",
+      "dest": "/organizer/index.html"
+    },
+    {
+      "src": "/organizer",
+      "dest": "/organizer/index.html"
+    },
+    {
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
 }
