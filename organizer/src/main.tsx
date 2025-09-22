@@ -22,6 +22,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
         <BrowserRouter
+          basename={import.meta.env.PROD ? '/organizer' : '/'}
           future={{
             v7_startTransition: true,
             v7_relativeSplatPath: true,
