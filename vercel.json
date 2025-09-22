@@ -1,0 +1,5 @@
+{
+  "buildCommand": "npm run build:frontend && mkdir -p public && cp -r client/dist/* public/ && mkdir -p public/organizer && cp -r organizer/dist/* public/organizer/",
+  "outputDirectory": "public",
+  "installCommand": "npm install"
+}
